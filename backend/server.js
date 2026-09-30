@@ -1,0 +1,13 @@
+const express = require("express");
+const path = require("path");
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use("/api/students",require("./routes/users"));
+app.use(express.static(path.join(__dirname,"..","public")));
+app.get("/api/health",(req,res)=>res.status(200).json({success:true,message:"DECodelabs API is running",status:"healthy"}));
+app.get("/api",(req,res)=>res.status(200).json({success:true,name:"DECodelabs Student Management API",version:"1.0.0",endpoints:{health:"GET /api/health",students:"GET /api/students",studentById:"GET /api/students/:id",createStudent:"POST /api/students",updateStudent:"PUT /api/students/:id",deleteStudent:"DELETE /api/students/:id"}}));
+app.use((req,res)=>res.status(404).json({success:false,message:"Route not found"}));
+app.use((err,req,res,next)=>{console.error(err);res.status(500).json({success:false,message:"Internal server error"});});
+app.listen(PORT,()=>console.log(`DECodelabs API running at http://localhost:${PORT}`));

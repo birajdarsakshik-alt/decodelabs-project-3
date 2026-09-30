@@ -1,0 +1,23 @@
+{
+  "name": "decodelabs-project-2",
+  "version": "1.0.0",
+  "description": "DecodeLabs Full Stack Development Project 2 - Student Management REST API",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "keywords": [
+    "decodelabs",
+    "full-stack",
+    "express",
+    "rest-api",
+    "student-management"
+  ],
+  "author": "Esakki Raja",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite3": "^6.0.1"
+  }
+}
