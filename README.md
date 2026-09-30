@@ -83,6 +83,6 @@ Project 3 - Database Integration: COMPLETED
 
 ## Developer
 
-Esakki Raja Salaikumar
+Sakshi Birajdar
 
 Full Stack Development Trainee - DecodeLabs Batch 2026
